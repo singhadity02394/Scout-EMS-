@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Provider Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .back-to-login {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .back-to-login a {
+            color: #008CBA;
+            text-decoration: none;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h2>Event Provider Registration</h2>
+
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" required placeholder="Enter your address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="event-type">Event Type</label>
+                <select id="event-type" name="event-type" required>
+                    <option value="" disabled selected>Select Event Type</option>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Birthday">Birthday</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Festival">Festival</option>
+                </select>
+            </div>
+
+            <input type="submit" value="Register">
+
+            <!-- Error Message (if any) -->
+            <div class="error-message">
+                <!-- Example: <p>Registration failed. Please try again.</p> -->
+            </div>
+
+            <div class="back-to-login">
+                <p>Already have an account? <button onclick="window.location.href='/event_provider_login'">Login here</button></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
